@@ -12,7 +12,11 @@
 #include "LevelEditor.h"
 #include "AssetRegistryModule.h"
 #include "Core/Public/HAL/FileManager.h"
-#include "Core/Public/HAL/PlatformFilemanager.h"
+#ifdef LINUX_BUILD
+  #include "Core/Public/HAL/PlatformFileManager.h"
+#else
+  #include "Core/Public/HAL/PlatformFilemanager.h"
+#endif
 #include "Editor/EditorPerformanceSettings.h"
 #include "Engine/Selection.h"
 #include "Interfaces/IMainFrameModule.h"

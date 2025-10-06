@@ -53,7 +53,11 @@
 
 #include "Modules/ModuleManager.h"
 #include "Interfaces/IPluginManager.h"
-#include "HAL/PlatformFilemanager.h"
+#ifdef LINUX_BUILD
+  #include "HAL/PlatformFileManager.h"
+else
+  #include "HAL/PlatformFilemanager.h"
+#endif
 #include "Misc/MessageDialog.h"
 #include "Misc/Paths.h"
 #include "AssetRegistryModule.h"

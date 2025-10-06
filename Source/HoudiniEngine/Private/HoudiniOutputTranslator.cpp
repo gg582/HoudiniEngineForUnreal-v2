@@ -51,7 +51,11 @@
 #include "EditorSupportDelegates.h"
 #include "FileHelpers.h"
 #include "LandscapeInfo.h"
-#include "HAL/PlatformFilemanager.h"
+#ifdef LINUX_BUILD
+  #include "HAL/PlatformFileManager.h"
+else
+  #include "HAL/PlatformFilemanager.h"
+#endif
 #include "HAL/FileManager.h"
 #include "Engine/WorldComposition.h"
 #include "Modules/ModuleManager.h"

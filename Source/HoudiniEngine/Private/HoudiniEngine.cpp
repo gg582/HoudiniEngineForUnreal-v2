@@ -43,7 +43,12 @@
 #include "Engine/StaticMesh.h"
 #include "Materials/Material.h"
 #include "ISettingsModule.h"
-#include "HAL/PlatformFilemanager.h"
+#ifdef LINUX_BUILD
+  #include "HAL/PlatformFileManager.h"
+#else
+  #include "HAL/PlatformFilemanager.h"
+#endif
+
 #include "Async/Async.h"
 #include "Logging/LogMacros.h"
 
